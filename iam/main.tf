@@ -4,7 +4,7 @@
 
 # Create instance profile for existing IAM role
 resource "aws_iam_instance_profile" "existing_role_profile" {
-  count = var.create_instance_profile ? 1 : 0
+  count = var.create_instance_profiles_for_existing_roles ? 1 : 0
 
   name = var.instance_profile_name
   path = var.instance_profile_path

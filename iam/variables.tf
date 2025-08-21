@@ -2,7 +2,7 @@
 # IAM MODULE VARIABLES
 # =============================================================================
 
-variable "create_instance_profile" {
+variable "create_instance_profiles_for_existing_roles" {
   description = "Whether to create an instance profile for existing IAM role"
   type = bool
   default = false
