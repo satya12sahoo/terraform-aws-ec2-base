@@ -248,7 +248,6 @@ resource "aws_cloudwatch_dashboard" "instance_dashboard" {
           ]
           period = var.dashboard_period
           stat   = var.dashboard_stat
-          region = data.aws_region.current.name
           title  = var.dashboard_cpu_title != null ? var.dashboard_cpu_title : "EC2 Instance Metrics - ${var.instance_name}"
           view   = var.dashboard_view
           stacked = var.dashboard_stacked
@@ -268,7 +267,6 @@ resource "aws_cloudwatch_dashboard" "instance_dashboard" {
           ]
           period = var.dashboard_period
           stat   = var.dashboard_stat
-          region = data.aws_region.current.name
           title  = var.dashboard_system_title != null ? var.dashboard_system_title : "System Metrics - ${var.instance_name}"
           view   = var.dashboard_view
           stacked = var.dashboard_stacked
@@ -278,6 +276,3 @@ resource "aws_cloudwatch_dashboard" "instance_dashboard" {
     ]
   })
 }
-
-# Data source for current region
-data "aws_region" "current" {}
